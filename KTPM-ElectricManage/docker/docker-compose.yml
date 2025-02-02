@@ -1,0 +1,82 @@
+version: '3.8'
+name: ktpm
+services:
+  auth-database:
+    image: postgres
+    environment:
+      POSTGRES_DB: auth-db
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: 123456
+    ports:
+      - '5432:5432'
+    volumes:
+      - auth-service:/var/lib/postgresql/data
+    restart: unless-stopped
+
+  workflow-database:
+    image: postgres
+    environment:
+      POSTGRES_DB: workflow-db
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: 123456
+    ports:
+      - '5433:5432'
+    volumes:
+      - workflow-service:/var/lib/postgresql/data
+    restart: unless-stopped
+
+  service-registry:
+    image: hieubeo0612/ktpm-service-registry
+    build:
+      context: ./service-registry
+    ports:
+      - '8761:8761'
+    restart: unless-stopped
+
+  gateway-service:
+    image: hieubeo0612/ktpm-gateway-service
+    build:
+      context: ./gateway-service
+    ports:
+      - '8080:8080'
+    environment:
+      - eureka.client.serviceUrl.defaultZone=http://service-registry:8761/eureka
+      - auth-service-url=http://auth-service:8081
+    depends_on:
+      - service-registry
+    restart: unless-stopped
+
+  auth-service:
+    image: hieubeo0612/ktpm-auth-service
+    build:
+      context: ./auth-service
+    ports:
+      - '8081:8081'
+    environment:
+      - eureka.client.serviceUrl.defaultZone=http://service-registry:8761/eureka
+      - eureka.instance.preferIpAddress=true
+      - spring.datasource.url=jdbc:postgresql://auth-database:5432/auth-db
+      - customer-service-url=http://customer-service:8082
+    depends_on:
+      - service-registry
+      - auth-database
+    restart: unless-stopped
+
+  workflow-service:
+    image: hieubeo0612/ktpm-workflow-service
+    build:
+      context: ./workflow-service
+    ports:
+      - '8082:8082'
+    environment:
+      - eureka.client.serviceUrl.defaultZone=http://service-registry:8761/eureka
+      - eureka.instance.preferIpAddress=true
+      - spring.datasource.url=jdbc:postgresql://workflow-database:5433/workflow-db
+    depends_on:
+      - service-registry
+      - workflow-database
+    restart: unless-stopped
+
+volumes:
+  auth-service:
+  workflow-service:

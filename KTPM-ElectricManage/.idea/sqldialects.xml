@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SqlDialectMappings">
+    <file url="file://$PROJECT_DIR$/workflow-service/src/main/java/com/ktpm/workflowservice/repository/InvoiceRepository.java" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/workflow-service/src/main/resources/scripts/seed.sql" dialect="GenericSQL" />
+  </component>
+</project>

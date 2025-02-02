@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".views.JobEditScreen">
+
+    <include layout="@layout/custom_action_bar" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/job_edit_btn_wrapper"
+            android:fillViewport="true"
+            android:overScrollMode="never">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="10dp">
+
+                    <com.example.timviec.components.CustomInput
+                        android:id="@+id/job_edit_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        app:custom_input_placeholder="VD: Lập trình viên Java"
+                        app:custom_input_required="true"
+                        app:custom_input_text="Công việc"
+                        app:custom_input_type="text" />
+
+                    <com.example.timviec.components.CustomInput
+                        android:id="@+id/job_edit_expectSalary"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        app:custom_input_placeholder="VD: Trên 20 triệu"
+                        app:custom_input_required="true"
+                        app:custom_input_text="Mức lương"
+                        app:custom_input_type="text" />
+
+                    <com.example.timviec.components.CustomInput
+                        android:id="@+id/job_edit_type"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        app:custom_input_required="true"
+                        app:custom_input_text="Hình thức"
+                        app:custom_input_type="text" />
+
+                    <com.example.timviec.components.CustomInput
+                        android:id="@+id/job_edit_quantity"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        app:custom_input_placeholder="VD: 10 người"
+                        app:custom_input_required="true"
+                        app:custom_input_text="Số lương cần tuyển"
+                        app:custom_input_type="number" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="vertical"
+                        app:custom_input_border_color="@color/gray_400"
+                        app:custom_input_radius="false">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:labelFor="@+id/edit_user_gender"
+                            android:text="Giới tính"
+                            android:textColor="@android:color/black"
+                            android:textStyle="bold" />
+
+                        <RadioGroup
+                            android:id="@+id/job_edit_gender"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/job_edit_gender_male"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="10dp"
+                                android:buttonTint="@color/primary"
+                                android:minWidth="0dp"
+                                android:minHeight="0dp"
+                                android:text="Nam" />
+
+                            <RadioButton
+                                android:id="@+id/job_edit_gender_female"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="10dp"
+                                android:buttonTint="@color/primary"
+                                android:minWidth="0dp"
+                                android:minHeight="0dp"
+                                android:text="Nữ" />
+
+                            <RadioButton
+                                android:id="@+id/job_edit_gender_none"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="10dp"
+                                android:buttonTint="@color/primary"
+                                android:minWidth="0dp"
+                                android:minHeight="0dp"
+                                android:text="Không yêu cầu" />
+                        </RadioGroup>
+                    </LinearLayout>
+
+                    <com.example.timviec.components.CustomInput
+                        android:id="@+id/job_edit_experience"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        app:custom_input_required="true"
+                        app:custom_input_text="Kinh nghiệm"
+                        app:custom_input_type="text" />
+
+                    <com.example.timviec.components.CustomInput
+                        android:id="@+id/job_edit_position"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        app:custom_input_placeholder="VD: Trưởng phòng"
+                        app:custom_input_required="true"
+                        app:custom_input_text="Chức vụ"
+                        app:custom_input_type="text" />
+
+                    <com.example.timviec.components.CustomInput
+                        android:id="@+id/job_edit_address"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        app:custom_input_placeholder="VD: Km10 Nguyễn Trãi"
+                        app:custom_input_required="true"
+                        app:custom_input_text="Địa chỉ làm việc"
+                        app:custom_input_type="text" />
+
+                    <com.example.timviec.components.CustomInput
+                        android:id="@+id/job_edit_description"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        app:custom_input_placeholder="Mô tả chi tiết công việc để các ứng viên có thể hiểu rõ hơn"
+                        app:custom_input_required="true"
+                        app:custom_input_text="Mô tả công việc"
+                        app:custom_input_type="textMultiLine" />
+
+                    <com.example.timviec.components.CustomInput
+                        android:id="@+id/job_edit_requirement"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        app:custom_input_placeholder="Mô tả chi tiết các yêu cầu mà ứng viên cần đáp ứng"
+                        app:custom_input_required="true"
+                        app:custom_input_text="Yêu cầu ứng viên"
+                        app:custom_input_type="textMultiLine" />
+
+                    <com.example.timviec.components.CustomInput
+                        android:id="@+id/job_edit_benefit"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        app:custom_input_placeholder="Mô tả chi tiết các quyền lợi khi làm việc ở công ty"
+                        app:custom_input_required="true"
+                        app:custom_input_text="Quyền lợi"
+                        app:custom_input_type="textMultiLine" />
+
+                    <com.example.timviec.components.CustomInput
+                        android:id="@+id/job_edit_expired"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:custom_input_placeholder="VD: 06/09/2022"
+                        app:custom_input_required="true"
+                        app:custom_input_text="Thời gian hết hạn"
+                        app:custom_input_type="date" />
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+
+        <LinearLayout
+            android:id="@+id/job_edit_btn_wrapper"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/gray_400" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="10dp">
+
+                <com.example.timviec.components.CustomButton
+                    android:id="@+id/job_edit_delete_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_weight="1"
+                    app:custom_button_color="@color/error"
+                    app:custom_button_round="true"
+                    app:custom_button_text="Xoá"
+                    app:custom_button_type="secondary" />
+
+                <com.example.timviec.components.CustomButton
+                    android:id="@+id/job_edit_approve_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_weight="1"
+                    app:custom_button_round="true"
+                    app:custom_button_text="Cập nhật" />
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

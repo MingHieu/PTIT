@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="com.ltmb.fitness.uimodel.SearchFilter" />
+
+        <variable
+            name="keySearchHistoryAdapter"
+            type="com.ltmb.fitness.scene.search.KeySearchHistoryAdapter" />
+
+        <variable
+            name="searchAdapter"
+            type="com.ltmb.fitness.scene.search.SearchAdapter" />
+
+        <variable
+            name="viewModel"
+            type="com.ltmb.fitness.scene.search.SearchViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingHorizontal="16dp"
+            android:paddingTop="16dp">
+
+            <include layout="@layout/view_back_button_view" />
+
+            <com.ltmb.fitness.widget.inputview.InputView
+                android:id="@+id/search_box"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:hint="@string/search_workout"
+                android:textColorHint="?colorInputTextHintColor"
+                app:iv_background="?colorInputBackground"
+                app:iv_left_icon="@drawable/ic_search"
+                app:iv_left_icon_tint="?colorText" />
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:paddingHorizontal="16dp"
+            android:visibility="@{viewModel.showResult ? View.GONE : View.VISIBLE}"
+            app:adapter="@{keySearchHistoryAdapter}"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:submitList="@{viewModel.keySearchHistory}"
+            tools:listitem="@layout/item_key_search_history" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="@{viewModel.showResult ? View.VISIBLE : View.GONE}">
+
+            <HorizontalScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scrollbarThumbHorizontal="@null">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:padding="16dp">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/filter_all_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:backgroundTint="?colorPrimary"
+                        android:onClick="@{() -> viewModel.setFilterSelected(SearchFilter.ALL)}"
+                        app:cardCornerRadius="20dp"
+                        app:strokeWidth="1dp">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingHorizontal="16dp"
+                            android:paddingVertical="6dp">
+
+                            <TextView
+                                android:id="@+id/filter_all_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/search_all_filter"
+                                android:textColor="?colorOnPrimary" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/filter_workout_beginner_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:onClick="@{() -> viewModel.setFilterSelected(SearchFilter.BEGINNER)}"
+                        android:padding="1dp"
+                        app:cardCornerRadius="20dp"
+                        app:strokeColor="@color/athens_gray"
+                        app:strokeWidth="1dp">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingHorizontal="16dp"
+                            android:paddingVertical="6dp">
+
+                            <TextView
+                                android:id="@+id/filter_workout_beginner_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/search_workout_beginner_filter"
+                                android:textColor="?colorText" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/filter_workout_intermediate_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:onClick="@{() -> viewModel.setFilterSelected(SearchFilter.INTERMEDIATE)}"
+                        android:padding="1dp"
+                        app:cardCornerRadius="20dp"
+                        app:strokeColor="@color/athens_gray"
+                        app:strokeWidth="1dp">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingHorizontal="16dp"
+                            android:paddingVertical="6dp">
+
+                            <TextView
+                                android:id="@+id/filter_workout_intermediate_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/search_workout_intermediate_filter"
+                                android:textColor="?colorText" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/filter_workout_advanced_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:onClick="@{() -> viewModel.setFilterSelected(SearchFilter.ADVANCED)}"
+                        android:padding="1dp"
+                        app:cardCornerRadius="20dp"
+                        app:strokeColor="@color/athens_gray"
+                        app:strokeWidth="1dp">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingHorizontal="16dp"
+                            android:paddingVertical="6dp">
+
+                            <TextView
+                                android:id="@+id/filter_workout_advanced_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/search_workout_advanced_filter"
+                                android:textColor="?colorText" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                </LinearLayout>
+            </HorizontalScrollView>
+
+
+            <TextView
+                android:id="@+id/result_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:text='@{viewModel.searchResults.size() + " " + @string/results}'
+                android:textColor="?colorText"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                tools:text="9 Results" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:paddingHorizontal="16dp"
+                app:adapter="@{searchAdapter}"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:submitList="@{viewModel.searchResults}"
+                tools:listitem="@layout/item_search" />
+        </LinearLayout>
+    </LinearLayout>
+</layout>

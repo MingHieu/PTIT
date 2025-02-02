@@ -1,0 +1,18 @@
+@import '../../styles/variable';
+
+.card {
+  :global(.ant-card-head) {
+    padding: 0 20px;
+    border-bottom: none;
+
+    :global(.ant-card-head-title) {
+      font-size: 16px;
+      font-weight: 500;
+      color: $text-color;
+    }
+  }
+
+  :global(.ant-card-body) {
+    padding: 7px 20px 20px 20px;
+  }
+}

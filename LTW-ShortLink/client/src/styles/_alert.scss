@@ -1,0 +1,164 @@
+$bg-white: white;
+$color-yellow: #fea628;
+$color-charcoal: #333333;
+$color-wheat: #e7e7e7;
+$color-active: #2ecc71;
+
+.react-confirm-alert-overlay {
+  z-index: 2000;
+  background: rgba(0, 0, 0, 0.16);
+}
+
+.react-confirm-alert-button-group {
+  justify-content: flex-end !important;
+  margin-top: 41px;
+
+  .btn-alert-cancel,
+  .btn-alert-ok {
+    text-align: center;
+    letter-spacing: 1.25px;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 16px;
+    border: none;
+    background-color: $bg-white;
+    padding: 0.525rem 1rem;
+    margin-right: 0;
+  }
+  .btn-alert-cancel {
+    color: #bdbdbd;
+  }
+
+  .btn-alert-ok {
+    color: $color-yellow;
+  }
+
+  button {
+    &:hover {
+      color: $color-yellow;
+      box-shadow: 0 7px 14px #32325d1a, 0 3px 6px #00000014;
+      -webkit-transform: translateY(-1px);
+      transform: translateY(-1px);
+      background-color: #f7fafc;
+      border-color: #f7fafc;
+    }
+
+    &:active {
+      color: #212529;
+      background-color: #d2e3ee;
+      border-color: #f7fafc;
+    }
+  }
+}
+
+.react-confirm-alert-body {
+  padding: 30px 20px 20px 20px;
+
+  h1 {
+    font-size: 14px;
+    line-height: 20px;
+    color: $color-charcoal;
+    letter-spacing: 0.25px;
+    font-weight: 500;
+  }
+}
+
+.rdtPicker {
+  min-width: 180px;
+  text-align: center;
+  .rdtMonths {
+  }
+  .rdtDays {
+    min-width: 250px;
+  }
+}
+
+.datepicker-fix-right {
+  .rdtPicker {
+    right: -40px;
+  }
+}
+
+.rc-time-picker {
+  width: 100%;
+
+  .rc-time-picker-input {
+    display: block;
+    width: 100%;
+    height: calc(1.5rem + 1.25rem + 2px);
+    padding: 0.625rem 0.75rem !important;
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: $color-charcoal;
+    background-color: $bg-white;
+    height: auto !important;
+    background-clip: padding-box;
+    border: 1px solid $color-wheat;
+    border-radius: 0.375rem;
+    box-shadow: none;
+    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    &:active,
+    &:focus {
+      border: 1px solid $color-active;
+    }
+  }
+
+  svg {
+    position: absolute;
+    right: 11px;
+    top: 35%;
+  }
+
+  .rc-time-picker-clear-icon {
+    display: none;
+  }
+}
+
+.rc-time-picker-panel-select {
+  width: 50% !important;
+}
+
+.rc-time-picker-panel-inner {
+  margin-top: 43px;
+  box-shadow: 0 1px 3px #0000001a;
+
+  .rc-time-picker-panel-input-wrap {
+    display: none;
+  }
+  .rc-time-picker-panel-combobox {
+    width: 150px;
+    z-index: 99999 !important;
+    background: #fff;
+    box-shadow: 0 1px 3px #0000001a;
+  }
+
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  ::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    -webkit-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.5);
+  }
+}
+
+.rc-time-picker-panel-input-wrap {
+  padding: 0.625rem 0.75rem !important;
+}
+
+.rc-time-picker-panel-narrow {
+  max-width: 150px;
+}
+
+.table td,
+.table th {
+  white-space: normal;
+}

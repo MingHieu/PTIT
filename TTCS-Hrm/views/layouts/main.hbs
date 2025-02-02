@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
+    {{#if cssLibrary}}
+    {{#each cssLibrary}}
+    {{{this}}}
+    {{/each}}
+    {{/if}}
+
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/loader.css">
+    <link rel="stylesheet" href="/css/header.css">
+
+    {{#if css}}
+    <link rel="stylesheet" href="/css/{{css}}">
+    {{/if}}
+</head>
+
+<body>
+
+    {{> header}}
+
+    <div class="body">
+        {{> navbar}}
+
+        <div class="main-container">
+            <main>
+                {{{body}}}
+                {{#if pagination}}
+                <div class="pagination">
+                    <p>{{formatPagination data}}</p>
+                    <input type="text" name="pagination" hidden>
+                    <input type="checkbox" name="lastPage" checked="{{isLastPage data}}" hidden>
+                    <div>
+                        <button id="pg-button-prev" type="button" class="pagination__button">
+                            <i class="fa fa-chevron-left"></i>
+                        </button>
+
+                        <button id="pg-button-next" type="button" class="pagination__button">
+                            <i class="fa fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+                {{/if}}
+
+                {{#if successMsg}}
+                <input type="text" id="successMsg" value="{{successMsg}}" hidden>
+                {{/if}}
+
+                {{#if errorMsg}}
+                <input type="text" id="errorMsg" value="{{errorMsg}}" hidden>
+                {{/if}}
+
+                {{>loader}}
+            </main>
+        </div>
+    </div>
+
+    {{#if jsLibrary}}
+    {{#each jsLibrary}}
+    {{{this}}}
+    {{/each}}
+    {{/if}}
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/header.js"></script>
+
+    {{#if pagination}}
+    <script src="/js/pagination.js"></script>
+    {{/if}}
+
+    {{#if js}}
+    <script src="/js/{{js}}"></script>
+    {{/if}}
+
+</body>
+
+</html>

@@ -1,0 +1,106 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/custom_input_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:labelFor="@+id/custom_input_input"
+            android:text="Input Label"
+            android:textColor="@android:color/black"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/custom_input_required"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="*"
+            android:textColor="@android:color/holo_red_light" />
+    </LinearLayout>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/custom_input_wrapper"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_marginTop="4dp"
+        app:cardBackgroundColor="@color/black"
+        app:cardCornerRadius="6dp"
+        app:cardElevation="0dp">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/custom_input_inner_wrapper"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="1dp"
+            app:cardCornerRadius="6dp"
+            app:cardElevation="0dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingHorizontal="10dp">
+
+                <Spinner
+                    android:id="@+id/custom_input_input_select"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/transparent" />
+
+                <ImageView
+                    android:id="@+id/custom_input_input_select_icon"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_drop_down" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_toStartOf="@id/custom_input_icon"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:id="@+id/custom_input_input"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:gravity="center_vertical"
+                        android:hint="Input Placeholder"
+                        android:inputType="text"
+                        android:scrollbars="vertical" />
+
+                    <AutoCompleteTextView
+                        android:id="@+id/custom_input_input_auto_complete"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:completionThreshold="1"
+                        android:hint="Input Placeholder"
+                        android:imeOptions="actionNext"
+                        android:inputType="text" />
+                </LinearLayout>
+
+
+                <ImageView
+                    android:id="@+id/custom_input_icon"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="10dp"
+                    android:src="@drawable/ic_eye" />
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

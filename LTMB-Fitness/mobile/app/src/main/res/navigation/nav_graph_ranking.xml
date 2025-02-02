@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_ranking"
+    app:startDestination="@id/rankingFragment">
+
+    <fragment
+        android:id="@+id/rankingFragment"
+        android:name="com.ltmb.fitness.scene.ranking.RankingFragment"
+        android:label="RankingFragment"
+        tools:layout="@layout/fragment_ranking">
+        <argument
+            android:name="@string/arg_show_bottom_nav"
+            android:defaultValue="true" />
+        <action
+            android:id="@+id/to_profile"
+            app:destination="@id/profileFragment">
+            <argument
+                android:name="idProfile"
+                app:argType="string" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.ltmb.fitness.scene.profile.ProfileFragment"
+        android:label="ProfileFragment"
+        tools:layout="@layout/fragment_profile">
+        <argument
+            android:name="idProfile"
+            app:argType="string" />
+    </fragment>
+</navigation>

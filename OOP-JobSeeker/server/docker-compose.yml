@@ -1,0 +1,13 @@
+volumes:
+  data:
+services:
+  findjobapplication:
+    image: postgres
+    environment:
+      - POSTGRES_PASSWORD=postgrespw
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=timviec
+    ports:
+      - 5432:5432
+    volumes:
+      - data:/var/lib/postgresql

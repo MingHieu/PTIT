@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".views.LoginScreen">
+
+    <include layout="@layout/custom_action_bar" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"
+        android:text="Đăng nhập"
+        android:textColor="@color/on_background"
+        android:textSize="32dp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:orientation="vertical"
+        android:paddingHorizontal="20dp">
+
+        <com.example.timviec.components.CustomInput
+            android:id="@+id/login_screen_username_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:custom_input_placeholder="Nhập email của bạn"
+            app:custom_input_text="Email"
+            app:custom_input_type="text" />
+
+        <com.example.timviec.components.CustomInput
+            android:id="@+id/login_screen_password_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:custom_input_placeholder="Nhập mật khẩu"
+            app:custom_input_text="Mật khẩu"
+            app:custom_input_type="password" />
+
+        <TextView
+            android:id="@+id/login_forgot_pass_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginTop="10dp"
+            android:text="Quên mật khẩu"
+            android:textColor="@color/primary" />
+
+        <com.example.timviec.components.CustomButton
+            android:id="@+id/login_screen_login_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:custom_button_text="Đăng nhập" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="20dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Không có tài khoản? " />
+
+            <TextView
+                android:id="@+id/login_screen_signup_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Đăng kí"
+                android:textColor="@color/primary" />
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

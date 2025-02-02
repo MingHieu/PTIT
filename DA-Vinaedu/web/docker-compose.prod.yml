@@ -1,0 +1,6 @@
+services:
+  vinaedu-web:
+    image: vinaedu-web
+    ports:
+      - '80:80'
+    restart: unless-stopped

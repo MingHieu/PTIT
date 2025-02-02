@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.timviec">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name=".App"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MyApp.NoActionBar"
+        android:usesCleartextTraffic="true"
+        tools:targetApi="31">
+        <service
+            android:name=".services.NotificationService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <activity
+            android:name=".views.UserPublic"
+            android:exported="false"></activity>
+        <activity
+            android:name=".views.EnterpriseEditScreen"
+            android:exported="false" />
+        <activity
+            android:name=".views.SearchScreen"
+            android:exported="false" />
+        <activity
+            android:name=".views.JobDetailScreen"
+            android:exported="false" />
+        <activity
+            android:name=".views.JobEditScreen"
+            android:exported="false" />
+        <activity
+            android:name=".views.JobScreen"
+            android:exported="false" />
+        <activity
+            android:name=".views.SkillEditScreen"
+            android:exported="false" />
+        <activity
+            android:name=".views.ExperienceEditScreen"
+            android:exported="false" />
+        <activity
+            android:name=".views.SignupEnterpriseScreen"
+            android:exported="false" />
+        <activity
+            android:name=".views.UserEditScreen"
+            android:exported="false" />
+        <activity
+            android:name=".views.SkillScreen"
+            android:exported="false" />
+        <activity
+            android:name=".views.ExperienceScreen"
+            android:exported="false" />
+        <activity
+            android:name=".views.SettingScreen"
+            android:exported="false" />
+        <activity
+            android:name=".views.SignupUserScreen"
+            android:exported="false" />
+        <activity
+            android:name=".views.SelectRoleScreen"
+            android:exported="false" />
+        <activity
+            android:name=".views.EducationScreen"
+            android:exported="false" />
+        <activity
+            android:name=".views.EducationEditScreen"
+            android:exported="false" />
+        <activity
+            android:name=".router.BottomTab"
+            android:exported="false" />
+        <activity
+            android:name=".views.LoginScreen"
+            android:exported="false" />
+        <activity
+            android:name=".views.MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,49 @@
+#event-tab {
+  width: 100%;
+}
+
+.event-item {
+  display: block;
+  background-color: #fff;
+  border: 1px solid #e6e6e6;
+  border-radius: 10px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
+.event-item__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.event-item__title {
+  color: #333;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.event-item__expiration {
+  color: #ff6347;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.event-item__details {
+  margin-bottom: 10px;
+}
+
+.event-item__details p {
+  margin-bottom: 10px;
+}
+
+.event-item__createAt {
+  margin-right: 10px;
+}
+
+.event-item__footer {
+  display: flex;
+  justify-content: flex-end;
+}

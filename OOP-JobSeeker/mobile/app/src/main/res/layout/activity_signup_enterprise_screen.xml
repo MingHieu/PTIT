@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".views.SignupEnterpriseScreen">
+
+    <include layout="@layout/custom_action_bar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Đăng ký"
+                android:textColor="@color/on_background"
+                android:textSize="32sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingHorizontal="20dp">
+
+                <com.example.timviec.components.CustomInput
+                    android:id="@+id/sign_up_enterprise_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    app:custom_input_placeholder="VD: CÔNG TY TNHH TIMVIEC "
+                    app:custom_input_required="true"
+                    app:custom_input_text="Công ty"
+                    app:custom_input_type="text" />
+
+                <com.example.timviec.components.CustomInput
+                    android:id="@+id/sign_up_enterprise_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    app:custom_input_placeholder="VD : Km10 Nguyễn Trãi "
+                    app:custom_input_required="true"
+                    app:custom_input_text="Địa chỉ "
+                    app:custom_input_type="text" />
+
+                <com.example.timviec.components.CustomInput
+                    android:id="@+id/sign_up_enterprise_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:custom_input_placeholder="VD: nguyenvana@gmail.com"
+                    app:custom_input_required="true"
+                    app:custom_input_text="Email"
+                    app:custom_input_type="text" />
+
+                <com.example.timviec.components.CustomInput
+                    android:id="@+id/sign_up_enterprise_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:custom_input_placeholder="Nhập mật khẩu"
+                    app:custom_input_required="true"
+                    app:custom_input_text="Mật khẩu"
+                    app:custom_input_type="password" />
+
+                <com.example.timviec.components.CustomInput
+                    android:id="@+id/sign_up_enterprise_repeat_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:custom_input_placeholder="Nhập lại mật khẩu"
+                    app:custom_input_required="true"
+                    app:custom_input_text="Xác nhận mật khẩu"
+                    app:custom_input_type="password" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
+                    android:text="@string/privacy_policy"
+                    android:textColor="@color/on_surface" />
+
+                <com.example.timviec.components.CustomButton
+                    android:id="@+id/sign_up_enterprise_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    app:custom_button_text="Đăng ký" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

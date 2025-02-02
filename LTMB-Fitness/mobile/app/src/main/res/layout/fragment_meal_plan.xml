@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="mealPlanAdapter"
+            type="com.ltmb.fitness.scene.mealplan.MealPlanAdapter" />
+
+        <variable
+            name="viewModel"
+            type="com.ltmb.fitness.scene.mealplan.MealPlanViewModel" />
+
+        <variable
+            name="mealPlan"
+            type="com.ltmb.fitness.uimodel.MealPlanUiModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?colorBackground"
+        android:orientation="vertical">
+
+        <!--        <include layout="@layout/view_action_bar_view" />-->
+
+        <!--        <com.ltmb.fitness.widget.actionbarview.ActionBarView-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            app:abv_title="@string/muscle"-->
+        <!--            app:abv_viewModel="@{viewModel}" />-->
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/meal_tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:tabIndicatorHeight="0dp"
+            app:tabMode="fixed"
+            app:tabPaddingBottom="0dp"
+            app:tabPaddingEnd="0dp"
+            app:tabPaddingStart="5dp"
+            app:tabPaddingTop="5dp"
+            app:tabTextAppearance="@style/MyCustomTabLayoutRanking">
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/meal_tabItem1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:icon="@drawable/ic_muscles"
+                android:text="@string/muscle"
+                android:textSize="16sp" />
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/meal_tabItem2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:icon="@drawable/ic_gain_weight"
+                android:text="@string/gain_weight"
+                android:textSize="16sp"
+                tools:text="Gain Weight"
+                />
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/ranking_tabItem3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:icon="@drawable/ic_lose_weight"
+                android:text="@string/lose_weight"
+                tools:text="Lose Weight"/>
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/meal_tabItem4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:icon="@drawable/ic_favorite"
+                android:text="@string/favorite"
+                tools:text="Favorite"/>
+
+        </com.google.android.material.tabs.TabLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.ltmb.fitness.widget.inputview.InputView
+                android:id="@+id/search_box"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/search_meal"
+                android:paddingHorizontal="16dp"
+                android:textColorHint="?colorInputTextHintColor"
+                app:iv_background="?colorInputBackground"
+                app:iv_left_icon="@drawable/ic_search"
+                app:iv_left_icon_tint="?colorText" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:clipToPadding="false"
+                android:padding="16dp"
+                app:adapter="@{mealPlanAdapter}"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:submitList="@{viewModel.mealPlansSearch}"
+                tools:listitem="@layout/item_meal_plan" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>

@@ -1,0 +1,61 @@
+.title {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.employee-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.employee-list {
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+  overflow: auto;
+}
+
+.employee-list table {
+  width: 100%;
+  border-collapse: collapse;
+  border-style: hidden;
+}
+
+.employee-list tr:not(thead tr):hover {
+  background-color: #ddd;
+  cursor: pointer;
+}
+
+.employee-list th,
+.employee-list td {
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+}
+
+.employee-list th {
+  padding: 15px 10px;
+  font-weight: bold;
+  background-color: #f9f9f9;
+}
+
+.employee-list td a {
+  display: block;
+  padding: 15px 10px;
+}
+
+.employee-list td:nth-child(1) {
+  width: 5%;
+  text-align: center;
+}
+
+.employee-list td:nth-child(2) {
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .employee-list-header {
+    flex-direction: column;
+  }
+}

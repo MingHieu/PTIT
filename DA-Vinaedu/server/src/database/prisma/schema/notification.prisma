@@ -1,0 +1,12 @@
+model Notification {
+    id        Int      @id @default(autoincrement())
+    userId    Int
+    user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+    title     String
+    message   String
+    data      Json?
+    isRead    Boolean  @default(false)
+    createdAt DateTime @default(now())
+
+    @@index([userId])
+}

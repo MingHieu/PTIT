@@ -1,0 +1,23 @@
+model Lesson {
+    id          Int          @id @default(autoincrement())
+    classroom   Classroom    @relation(fields: [classroomId], references: [id], onDelete: Cascade)
+    classroomId String
+    attendances Attendance[]
+    start       BigInt
+    end         BigInt
+}
+
+model Attendance {
+    id        Int     @id @default(autoincrement())
+    student   Student @relation(fields: [studentId], references: [id], onDelete: Cascade)
+    studentId Int
+    lesson    Lesson  @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+    lessonId  Int
+
+    checkInAt   BigInt?
+    checkOutAt  BigInt?
+    commentTime BigInt?
+    comment     String?
+
+    @@unique([studentId, lessonId])
+}

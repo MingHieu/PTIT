@@ -1,0 +1,27 @@
+@import './variable';
+@import './mixin';
+
+#addMembers {
+
+  & .ant-select-selector {
+    min-height: 44px !important;
+    max-height: 44px !important;
+
+    & .ant-select-selection-overflow {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box !important;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      
+      &:only-child {
+        padding: 3px 0;
+
+        & .ant-select-selection-overflow-item {
+          margin: 2px 0px;
+        }
+      }
+
+    }
+  }
+}

@@ -1,0 +1,32 @@
+.form {
+  font-size: 50px !important;
+
+  :global(.ant-form-item-label) {
+    label {
+      font-size: 20px !important;
+    }
+  }
+}
+
+.stats {
+  :global(.ant-space-item) {
+    width: calc(100% / 3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.brands {
+  :global(.ant-space-item) {
+    width: 70%;
+  }
+}
+
+.buttonGroup {
+  :global(.ant-form-item-control-input-content) {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+}

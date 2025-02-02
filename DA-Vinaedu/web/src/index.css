@@ -1,0 +1,146 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Nunito Sans';
+  src: url('/fonts/NunitoSans-VariableFont.ttf') format('truetype');
+  font-weight: 0 900;
+}
+
+:root {
+  --black: #0e0620;
+  interpolate-size: allow-keywords;
+}
+
+* {
+  font-family: 'Nunito Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: var(--black);
+}
+
+/* NAV BAR */
+@media (max-width: 768px) {
+  .nav-bar {
+    max-height: 0;
+  }
+
+  nav:has(input[type='checkbox']:checked) .nav-bar {
+    max-height: 500px;
+  }
+
+  nav:has(input[type='checkbox']:not(:checked)) .nav-bar {
+    max-height: 0;
+  }
+}
+
+/* Skeleton animation */
+@keyframes skeleton {
+  0% {
+    background-color: #ddd;
+  }
+  50% {
+    background-color: #e8e8e8;
+  }
+  100% {
+    background-color: #ddd;
+  }
+}
+
+.animate-skeleton {
+  animation: skeleton 1.5s infinite;
+}
+
+/* Slide-in animation */
+@keyframes slideIn {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate-slideIn {
+  animation: slideIn 1s;
+}
+
+/* Border animation */
+@keyframes borderAnimation {
+  0% {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #2563eb;
+  }
+  100% {
+    border-color: transparent;
+  }
+}
+
+.animate-border {
+  border: 1px solid transparent;
+  animation: borderAnimation 1.2s infinite;
+}
+
+/* SHEET TO HTML CSS */
+#sheet-table {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+
+#sheet-table th,
+#sheet-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+#sheet-table th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+#sheet-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+#sheet-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Collapse animation */
+.collapsible {
+  overflow: hidden;
+  transition: height 0.3s ease-in-out;
+}
+
+.collapsed {
+  height: 0;
+}
+
+.expanded {
+  height: auto;
+}
+
+.neon-border {
+  border-radius: 50%;
+  transition: all 0.24s;
+}
+
+.neon-border:hover {
+  box-shadow: 0 0 5px rgba(0, 122, 255, 0.5), 0 0 9px rgba(0, 122, 255, 0.5),
+    0 0 13px rgba(0, 122, 255, 0.5), 0 0 17px rgba(0, 122, 255, 0.5),
+    0 0 21px rgba(0, 122, 255, 1), 0 0 25px rgba(0, 122, 255, 1),
+    0 0 29px rgba(0, 122, 255, 1);
+}

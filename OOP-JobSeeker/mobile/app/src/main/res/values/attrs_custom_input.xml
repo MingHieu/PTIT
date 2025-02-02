@@ -1,0 +1,18 @@
+<resources>
+    <declare-styleable name="CustomInput">
+        <attr name="custom_input_text" format="string" />
+        <attr name="custom_input_placeholder" format="string" />
+        <attr name="custom_input_type" format="enum">
+            <enum name="text" value="0" />
+            <enum name="password" value="1" />
+            <enum name="textMultiLine" value="2" />
+            <enum name="date" value="3" />
+            <enum name="month_year" value="4" />
+            <enum name="none" value="5" />
+            <enum name="number" value="6" />
+        </attr>
+        <attr name="custom_input_required" format="boolean" />
+        <attr name="custom_input_radius" format="boolean" />
+        <attr name="custom_input_border_color" format="reference" />
+    </declare-styleable>
+</resources>

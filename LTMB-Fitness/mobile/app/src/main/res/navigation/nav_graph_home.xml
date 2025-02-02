@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_home"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.ltmb.fitness.scene.home.HomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home">
+        <argument
+            android:name="@string/arg_show_bottom_nav"
+            android:defaultValue="true" />
+        <action
+            android:id="@+id/to_search"
+            app:destination="@id/searchFragment"
+            app:enterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out" />
+        <action
+            android:id="@+id/to_body_area"
+            app:destination="@id/bodyAreaFragment"
+            app:enterAnim="@anim/slide_in_bottom"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out_bottom" />
+        <action
+            android:id="@+id/to_workout_plan_detail"
+            app:destination="@+id/nav_graph_workout_plan"
+            app:enterAnim="@anim/slide_in_bottom"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out_bottom">
+            <argument
+                android:name="workoutPlanId"
+                app:argType="string" />
+        </action>
+        <action
+            android:id="@+id/to_bookmark_workout_plan"
+            app:destination="@id/bookmarkWorkoutPlanFragment"
+            app:enterAnim="@anim/slide_in_bottom"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out_bottom" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.ltmb.fitness.scene.search.SearchFragment"
+        android:label="SearchFragment"
+        tools:layout="@layout/fragment_search">
+        <action
+            android:id="@+id/to_workout_plan_detail"
+            app:destination="@+id/nav_graph_workout_plan"
+            app:enterAnim="@anim/slide_in_bottom"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out_bottom">
+            <argument
+                android:name="workoutPlanId"
+                app:argType="string" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/bodyAreaFragment"
+        android:name="com.ltmb.fitness.scene.bodyarea.BodyAreaFragment"
+        android:label="BodyAreaFragment"
+        tools:layout="@layout/fragment_body_area">
+        <argument
+            android:name="bodyArea"
+            app:argType="com.ltmb.fitness.uimodel.BodyAreaUiModel" />
+
+        <action
+            android:id="@+id/to_workout_plan_detail"
+            app:destination="@+id/nav_graph_workout_plan"
+            app:enterAnim="@anim/slide_in_bottom"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out_bottom">
+            <argument
+                android:name="workoutPlanId"
+                app:argType="string" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/bookmarkWorkoutPlanFragment"
+        android:name="com.ltmb.fitness.scene.bookmarkworkoutplan.BookmarkWorkoutPlanFragment"
+        android:label="BookmarkWorkoutPlanFragment"
+        tools:layout="@layout/fragment_bookmark_workout_plan">
+        <action
+            android:id="@+id/to_workout_plan_detail"
+            app:destination="@+id/nav_graph_workout_plan"
+            app:enterAnim="@anim/slide_in_bottom"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out_bottom">
+            <argument
+                android:name="workoutPlanId"
+                app:argType="string" />
+        </action>
+        <action
+            android:id="@+id/to_create_workout_plan"
+            app:destination="@id/createWorkoutPlanFragment"
+            app:enterAnim="@anim/slide_in_bottom"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out_bottom" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/createWorkoutPlanFragment"
+        android:name="com.ltmb.fitness.scene.createworkoutplan.CreateWorkoutPlanFragment"
+        android:label="CreateWorkoutPlanFragment"
+        tools:layout="@layout/fragment_create_workout_plan" />
+</navigation>

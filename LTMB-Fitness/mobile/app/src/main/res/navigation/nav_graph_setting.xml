@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_setting"
+    app:startDestination="@id/settingFragment">
+
+    <fragment
+        android:id="@+id/settingFragment"
+        android:name="com.ltmb.fitness.scene.setting.SettingFragment"
+        android:label="SettingFragment"
+        tools:layout="@layout/fragment_setting">
+        <argument
+            android:name="@string/arg_show_bottom_nav"
+            android:defaultValue="true" />
+        <action
+            android:id="@+id/to_login"
+            app:destination="@+id/nav_graph_auth"
+            app:popUpTo="@+id/nav_graph_all"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/to_person_info"
+            app:destination="@id/personInfoFragment" />
+        <action
+            android:id="@+id/to_workoutPreferencesFragment"
+            app:destination="@id/workoutPreferencesFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/personInfoFragment"
+        android:name="com.ltmb.fitness.scene.personinfor.PersonInfoFragment"
+        android:label="PersonInfoFragment"
+        tools:layout="@layout/fragment_person_info" />
+    <fragment
+        android:id="@+id/workoutPreferencesFragment"
+        android:name="com.ltmb.fitness.scene.workoutpreferences.WorkoutPreferencesFragment"
+        android:label="WorkoutPreferencesFragment"
+        tools:layout="@layout/fragment_workout_preferences"/>
+</navigation>

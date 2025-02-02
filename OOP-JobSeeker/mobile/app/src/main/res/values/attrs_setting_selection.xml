@@ -1,0 +1,6 @@
+<resources>
+    <declare-styleable name="SettingSelection">
+        <attr name="setting_selection_icon" format="reference" />
+        <attr name="setting_selection_text" format="string" />
+    </declare-styleable>
+</resources>

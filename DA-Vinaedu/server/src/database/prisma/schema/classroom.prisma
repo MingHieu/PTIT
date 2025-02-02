@@ -1,0 +1,39 @@
+model Classroom {
+    id      String @id
+    owner   User   @relation(fields: [ownerId], references: [id], onDelete: Cascade)
+    ownerId Int
+
+    name        String
+    description String?
+    banner      File?
+    status      ClassroomStatus
+    isPrivate   Boolean         @default(true)
+
+    requests             ClassroomRequest[]
+    students             Student[]
+    lessons              Lesson[]
+    assignments          Assignment[]
+    exams                Exam[]
+    materials            Material[]
+    assignmentCategories AssignmentCategory[]
+    meeting              Json?
+
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+}
+
+enum ClassroomStatus {
+    ACTIVE
+    INACTIVE
+}
+
+model ClassroomRequest {
+    id          Int       @id @default(autoincrement())
+    createdAt   DateTime  @default(now())
+    user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+    userId      Int
+    classroom   Classroom @relation(fields: [classroomId], references: [id], onDelete: Cascade)
+    classroomId String
+
+    @@unique([userId, classroomId])
+}

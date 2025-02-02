@@ -1,0 +1,18 @@
+<div id="event-tab" class="tab-content">
+    <h1>Sự kiện đã tham gia</h1>
+    {{#each data}}
+    <a class="event-item" href="/event/{{this.id}}/edit">
+        <div class="event-item__header">
+            <h2 class="event-item__title">{{this.name}}</h2>
+            <p class="event-item__expiration">Thời gian hết hạn đăng ký: {{formatDateDistanceLeftFromNow
+                this.expiredAt}} ngày</p>
+        </div>
+        <div class="event-item__details">
+            <p class="event-item__createAt">Thời gian tạo: {{formatDateTime this.createAt}}</p>
+            <p class="event-item__holdtime">Thời gian diễn ra sự kiện: {{formatDateDistance this.from this.to}}</p>
+            <p class="event-item__participants">Số người tham gia: {{formatNumber this.participants.length}} người</p>
+            <p class="event-item__address">Địa điểm: {{this.address}}</p>
+        </div>
+    </a>
+    {{/each}}
+</div>

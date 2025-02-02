@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    tools:context=".views.MainActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/main_activity_version"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TimViec"
+            android:textColor="@color/primary"
+            android:textFontWeight="900"
+            android:textSize="50dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="50dp"
+            android:text="Kết nối ứng viên với nhà tuyển dụng một cách nhanh chóng"
+            android:textAlignment="center"
+            android:textColor="@color/on_background"
+            android:textSize="14dp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/main_activity_version"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        android:text="Version 1.0.0"
+        android:textColor="@color/gray_400" />
+
+
+</RelativeLayout>

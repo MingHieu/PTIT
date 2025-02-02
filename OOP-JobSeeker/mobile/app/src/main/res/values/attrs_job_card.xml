@@ -1,0 +1,9 @@
+<resources>
+    <declare-styleable name="JobCard">
+        <attr name="job_card_job_name" format="string" />
+        <attr name="job_card_job_company" format="string" />
+        <attr name="job_card_job_money" format="string" />
+        <attr name="job_card_job_address" format="string" />
+        <attr name="job_card_job_time" format="string" />
+    </declare-styleable>
+</resources>

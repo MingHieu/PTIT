@@ -1,0 +1,25 @@
+<div id="request-tab" class="tab-content">
+    <h1>Lịch sử yêu cầu</h1>
+    <div class="table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th>Yêu cầu</th>
+                    <th>Ngày</th>
+                    <th>Trạng thái</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each data}}
+                <tr>
+                    <td><a href="/request/{{this.id}}">{{this.name}}</a></td>
+                    <td><a href="/request/{{this.id}}">{{formatDate this.createAt}}</a></td>
+                    <td data-status="{{this.status}}"><a href="/request/{{this.id}}">
+                            <span>{{formatRequestStatus this.status}}</span>
+                        </a></td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</div>

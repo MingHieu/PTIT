@@ -1,0 +1,252 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Fitness</string>
+
+    <!-- common  -->
+    <string name="common_ok">OK</string>
+    <string name="common_cancel">Cancel</string>
+    <string name="search_workout">Search workout plan …</string>
+    <string name="common_delete">Delete</string>
+    <string name="common_resume">Resume</string>
+    <string name="common_pause">Pause</string>
+    <string name="common_previous">Previous</string>
+    <string name="common_skip">Skip</string>
+    <string name="common_save">Save</string>
+    <string name="common_require">*</string>
+    <string name="search">Search</string>
+    <string name="search_all_filter">All</string>
+    <string name="search_workout_beginner_filter">Beginner</string>
+    <string name="search_workout_intermediate_filter">Intermediate</string>
+    <string name="search_workout_advanced_filter">Advanced</string>
+    <string name="search_workout_filter">Workout</string>
+    <string name="search_food_filter">Food</string>
+    <string name="results">Results</string>
+    <string name="text">Text</string>
+    <string name="video">Video</string>
+
+    <!-- Home -->
+    <string name="home_screen_title">Home</string>
+    <string name="home_screen_workout_plan_title">Workout Plan For You</string>
+    <string name="home_screen_body_area_focus_title">Body Focus Area</string>
+
+    <!-- Bookmark -->
+    <string name="bookmark_workout_plan_screen_title">Workout Plan Bookmark</string>
+    <string name="bookmark_workout_plan_select_all">Select all</string>
+    <string name="bookmark_workout_plan_cancel">Cancel</string>
+    <string name="bookmark_workout_plan_delete">Delete</string>
+
+    <!-- Body Area -->
+    <string name="body_area_screen_title">Body Focus Area</string>
+
+    <!-- Discover -->
+    <string name="discover_screen_title">Discover</string>
+    <string name="discover_workout_plan_card">Workout Plan</string>
+    <string name="discover_meal_plan_card">Meal Plan</string>
+    <string name="discover_music_library_card">Music Library</string>
+
+    <!-- Ranking -->
+    <string name="ranking_screen_title">Ranking</string>
+    <string name="ranking_tab_icon1"> Daily Training Hours </string>
+    <string name="ranking_tab_icon2"> Weekly Training Days </string>
+    <string name="ranking_tab_icon3"> Total Training Days </string>
+
+    <!-- Progress -->
+    <string name="progress_screen_title">Progress</string>
+
+    <!-- Setting -->
+    <string name="setting_screen_title">Setting</string>
+
+    <!-- Workout Plan -->
+    <string name="workout_plan_screen_title">Workout Plan</string>
+    <string name="workouts">workouts</string>
+    <string name="minutes">minutes</string>
+    <string name="kcal">kcal</string>
+    <string name="start_workout">start</string>
+    <string name="gain_weight">Gain Weight</string>
+    <string name="lose_weight">Lose Weight</string>
+    <string name="favorite">Favorite</string>
+
+    <!-- Workout -->
+    <string name="congratulations">Congratulations!</string>
+    <string name="completed_workout">You\'ve completed the workout!</string>
+    <string name="go_home">Go to Homepage</string>
+    <string name="view_report">View Report</string>
+
+    <!-- Create Workout Plan -->
+    <string name="create_workout_plan_screen_title">Create Workout Plan</string>
+    <string name="update_workout_plan_screen_title">Update Workout Plan</string>
+    <string name="name_input_label">Name</string>
+    <string name="name_input_hint">Ex: Gain Weight Quickly</string>
+    <string name="description_input_label">Description</string>
+    <string name="description_input_hint">Ex: Suitable for all fitness levels, this plan ensures efficient muscle stimulation and optimal growth</string>
+    <string name="workouts_input_label">Workouts</string>
+
+    <!-- Login-->
+    <string name="lg_title">Welcome Back</string>
+    <string name="lg_sub_title">Sign in to access your personalized workouts and track your progress</string>
+    <string name="lg_email">Email</string>
+    <string name="lg_password">Password</string>
+    <string name="lg_forgot_password">Forgot Password</string>
+    <string name="lg_login">Login</string>
+
+    <!-- Start app-->
+    <string name="start_app_name">Zenfit</string>
+    <string name="start_app_skip">Skip</string>
+    <string name="start_app_continue">Continue</string>
+    <string name="start_app_1_title">Your Fitness Journey Starts Here</string>
+    <string name="start_app_1_sub_title">Get ready to embark on a transformative fitness journey with Zenfit. Discover a wide range of workout, tailored to your goal.</string>
+    <string name="start_app_2_title">Tailored Exercise Plan for Your Needs</string>
+    <string name="start_app_2_sub_title">Zenfit personalizes workouts just for you. Whether you are a beginner or a fitness enthusiast, our app adapts to your needs.</string>
+    <string name="start_app_3_title">Stay Informed About Your Fitness Progress</string>
+    <string name="start_app_3_sub_title">Stay motivated and track your progress effortlessly. Start your fitness journey today and achieve the results you are always wanted.</string>
+
+    <!-- Get started-->
+    <string name="get_started_title">Let\'s Get Started!</string>
+    <string name="get_started_sub_title">Embank on a fitness and workout adventure</string>
+    <string name="get_started_login">Login</string>
+    <string name="get_started_signup">Signup</string>
+    <string name="get_started_policy">Privacy Policy • Terms of Service</string>
+
+
+    <!-- Signup-->
+    <string name="signup_title">Create Your Account</string>
+    <string name="signup_sub_title">Sign up now to get access to personalized workouts and achieve your fitness goals.</string>
+    <string name="signup_email">Email</string>
+    <string name="signup_password">Password</string>
+    <string name="signup_retype_password">Retype password</string>
+    <string name="signup_have_account">Already have an account?</string>
+    <string name="signup_login">Login</string>
+    <string name="signup">Sign up</string>
+  
+    <!-- Food-->
+    <string name="search_meal">Search meal plan …</string>
+    <string name="meal_plan_screen_title">Meal Plan</string>
+    <string name="calories">Calories</string>
+    <string name="sugars">Sugars</string>
+    <string name="protein">Protein</string>
+    <string name="muscle">Muscle</string>
+    <string name="more_like_this">More Like This:</string>
+
+    <!-- Profile-->
+    <string name="profile">Profile</string>
+    <string name="change_avatar">Change avatar</string>
+    <string name="name">Name</string>
+    <string name="user">User</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="delete_account">Delete Account</string>
+
+    <!--    Select-->
+    <string name="select_skip">Skip</string>
+    <string name="select_continue">Continue</string>
+    <string name="select_gender_status">1/10</string>
+    <string name="select_gender_title">Select Your Gender</string>
+    <string name="select_gender_sub_title">Help us understand you better.</string>
+    <string name="select_gender_male">Man</string>
+    <string name="select_gender_female">Woman</string>
+
+    <!--    Select age-->
+    <string name="select_age_status">3/10</string>
+    <string name="select_age_title">Enter Your Age</string>
+    <string name="select_age_sub_title">Your age helps us design suitable workouts.</string>
+
+    <!--    Select height-->
+    <string name="select_height_status">4/10</string>
+    <string name="select_height_title">Enter Your Height</string>
+    <string name="select_height_sub_title">Please provide your height in centimeters.</string>
+
+    <!--    Select weight-->
+    <string name="select_weight_status">5/10</string>
+    <string name="select_weight_title">Enter Your Weight</string>
+    <string name="select_weight_sub_title">Please provide your weight in kilograms.</string>
+
+    <!--    Select week plant-->
+    <string name="select_plan_status">10/10</string>
+    <string name="select_plan_title">Select Your Weekly Workout Plan</string>
+    <string name="select_plan_sub_title">How often do you plan to work out each week? Well create a schedule for you.</string>
+
+    <string name="select_end_title">Creating Personalized Workout Plan For You</string>
+    <string name="select_end_sub_title">Please Wait...</string>
+    <string name="select_end_progress">75%</string>
+    <string name="select_end_continue">This will just take a moment. Get ready to transform your fitness journey!</string>
+
+    <string name="select_get_started_title">Your Workout Plan is Ready!</string>
+    <string name="select_get_started_sub_title">Your personalized workout plan has been generated based on your goals &amp; fitness level.</string>
+    <string name="select_get_started_img_name">Full Body Stretching</string>
+    <string name="select_get_started_img_title">20 mins • Intermediate</string>
+    <string name="select_get_started_goto">Go to Homepage</string>
+    <string name="select_get_started">Get Started</string>
+
+    <!--    Report-->
+    <string name="report">Report</string>
+    <string name="report_workout">workouts</string>
+    <string name="report_minute">minutes</string>
+    <string name="report_kcal">kcal</string>
+    <string name="report_statistics">Statistics</string>
+    <string name="report_month">Month</string>
+    <string name="report_today">Today</string>
+    <string name="report_bmi">Today</string>
+    <string name="report_bfp">Today</string>
+    <string name="report_7_day">Last 7 days</string>
+    <string-array name="report_status_bmi">
+        <item>Dưới 18.5: Nhẹ cân</item>
+        <item>Từ 18.5 - 24.9: Bình thường</item>
+        <item>Từ 25.0 - 29.9: Thừa cân</item>
+        <item>Từ 25-30%: Mỡ cơ bản</item>
+        <item>Từ 30.0 trở lên: Béo phì</item>
+    </string-array>
+    <string-array name="report_status_bfp_male">
+        <item>Dưới 6%: Rất gầy</item>
+        <item>Từ 6-17%: Gầy</item>
+        <item>Từ 18-24%: Lý tưởng</item>
+        <item>Từ 25-30%: Mỡ cơ bản</item>
+        <item>Trên 30%: Béo phì</item>
+    </string-array>
+    <string-array name="report_status_bfp_female">
+        <item>Dưới 14%: Rất gầy</item>
+        <item>Từ 14-20%: Gầy</item>
+        <item>Từ 21-24%: Lý tưởng</item>
+        <item>Từ 25-31%: Mỡ cơ bản</item>
+        <item>Trên 31%: Béo phì</item>
+    </string-array>
+
+    <string name="workout_preferences">Workout Preferences</string>
+
+    <!--    Setting-->
+    <string name="settings">Settings</string>
+    <string name="personal_info">Personal Info</string>
+    <string name="account_security">Account &amp; Security</string>
+    <string name="billing_subscriptions">Billing &amp; Subscriptions</string>
+    <string name="payment_methods">Payment Methods</string>
+    <string name="linked_accounts">Linked Accounts</string>
+    <string name="app_appearance">Settings</string>
+    <string name="data_analytics">Data Analytics</string>
+    <string name="help_support">Hellp &amp; Support</string>
+    <string name="logout">Logout</string>
+    <string name="weight">Weight</string>
+    <string name="gender">Gender</string>
+    <string name="man">Man</string>
+    <string name="workout_focus_area">Workout Focus Area</string>
+    <string name="full_body">Full Body</string>
+    <string name="age">Age</string>
+    <string name="_28_years">28 years</string>
+    <string name="height">Height</string>
+    <string name="_185_cm">185 cm</string>
+    <string name="_76_kg">76 kg</string>
+    <string name="weekly_workout_plan">Weekly Workout Plan</string>
+    <string name="_4_days">4 days</string>
+    <string name="training_rest">Training Rest</string>
+    <string name="_20_secs">20 secs</string>
+    <string name="countdown_time">Countdown Time</string>
+    <string name="_10_secs">10 secs</string>
+    <string name="sound_options">Sound Options</string>
+    <string name="weight_unit">Weight Unit</string>
+    <string name="kg">kg</string>
+    <string name="height_unit">Height Unit</string>
+    <string name="cm">cm</string>
+    <string name="remind_me_to_workout">Remind me to Workout</string>
+    <string name="keep_the_screen_on">Keep the Screen On</string>
+    <string name="clear_cache">Clear Cache</string>
+
+    // FCM
+    <string name="fcm_chanel_id"> fitness </string>
+</resources>

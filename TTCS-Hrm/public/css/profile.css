@@ -1,0 +1,147 @@
+.tabs {
+  white-space: nowrap;
+  /* overflow-x: scroll; */
+  margin-bottom: 1rem;
+}
+
+.tab-links {
+  display: flex;
+  list-style: none;
+}
+
+.tab-links li {
+  margin-right: 20px;
+}
+
+.tab-links li:last-child {
+  margin-right: 0;
+}
+
+.tab-links li a {
+  display: block;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  border: 1px solid var(--border-color);
+}
+
+.tab-links li a.active {
+  background-color: var(--button-background);
+  color: #fff;
+  border-color: #333;
+}
+
+.tab-contents {
+  flex: 1;
+  border-top: 1px solid #ccc;
+  padding-top: 1rem;
+  padding-left: 0;
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.tab-content h1 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.tab-content label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.tab-content input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid var(--border-color);
+  margin-bottom: 10px;
+  background: #fff;
+}
+
+.password-group {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.password-group input {
+  border: none;
+  padding-right: 35px;
+  border-radius: 5px;
+  margin-bottom: 0;
+}
+
+.password-group input:focus {
+  outline: none;
+  border: none !important;
+}
+
+.currentPassword-group:has(#currentPassword:focus),
+.newPassword-group:has(#newPassword:focus),
+.newConfirmPassword-group:has(#newConfirmPassword:focus) {
+  border: 1px solid var(--infor-color);
+  outline: 1px solid var(--infor-color);
+}
+
+#currentPassword-toggle:checked ~ #currentPassword,
+#newPassword-toggle:checked ~ #newPassword,
+#newConfirmPassword-toggle:checked ~ #newConfirmPassword {
+  text-security: disc;
+  -webkit-text-security: disc;
+  -moz-text-security: disc;
+}
+
+.control-label__show-password i {
+  display: none;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+#currentPassword-toggle:checked ~ .control-label__show-password .hide-icon,
+#newPassword-toggle:checked ~ .control-label__show-password .hide-icon,
+#newConfirmPassword-toggle:checked ~ .control-label__show-password .hide-icon {
+  display: block;
+}
+
+#currentPassword-toggle:not(:checked)
+  ~ .control-label__show-password
+  .show-icon,
+#newPassword-toggle:not(:checked) ~ .control-label__show-password .show-icon,
+#newConfirmPassword-toggle:not(:checked)
+  ~ .control-label__show-password
+  .show-icon {
+  display: block;
+}
+
+.tab-content button[type='submit'] {
+  background-color: var(--button-background);
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.tab-content button[type='submit']:hover {
+  background-color: #555;
+}
+
+.tab-content button[type='submit']:active {
+  background-color: #222;
+}

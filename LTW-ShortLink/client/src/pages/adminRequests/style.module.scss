@@ -1,0 +1,27 @@
+.requests {
+  :global {
+    .ant-table-cell:first-child {
+      width: 10%;
+      text-align: center;
+    }
+
+    .ant-table-cell:nth-child(3) {
+      width: 30%;
+      text-align: center;
+    }
+
+    .ant-table-cell:nth-child(2) {
+      width: 30%;
+      text-align: center;
+    }
+
+    .ant-table-cell:nth-child(4) {
+      width: 20%;
+      text-align: center;
+    }
+    .ant-table-cell:nth-child(5) {
+      width: 10%;
+      text-align: center;
+    }
+  }
+}

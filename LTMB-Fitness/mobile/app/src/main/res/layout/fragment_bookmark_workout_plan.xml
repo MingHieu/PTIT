@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="adapter"
+            type="com.ltmb.fitness.scene.bookmarkworkoutplan.BookmarkWorkoutPlanAdapter" />
+
+        <variable
+            name="bookmarkViewModel"
+            type="com.ltmb.fitness.internal.injection.viewmodel.BookmarkViewModel" />
+
+        <variable
+            name="viewModel"
+            type="com.ltmb.fitness.scene.bookmarkworkoutplan.BookmarkWorkoutPlanViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?colorBackground"
+        android:orientation="vertical">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.ltmb.fitness.widget.actionbarview.ActionBarView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:abv_onRightIconClick="@{() -> viewModel.onAddButtonClick()}"
+                    app:abv_right_icon="@drawable/ic_add"
+                    app:abv_title="@string/bookmark_workout_plan_screen_title"
+                    app:abv_viewModel="@{viewModel}" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/workout_plan_recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:animateLayoutChanges="false"
+                    android:clipToPadding="false"
+                    android:paddingHorizontal="16dp"
+                    app:adapter="@{adapter}"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:submitList="@{bookmarkViewModel.workoutPlans}"
+                    tools:listitem="@layout/item_bookmark_workout_plan" />
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:visibility="@{bookmarkViewModel.selecting ? View.VISIBLE : View.GONE}">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/border_top"
+                android:gravity="center"
+                android:onClick="@{() -> bookmarkViewModel.setSelectingValue(false)}">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/common_cancel"
+                    android:textColor="?colorSubText"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="?colorError"
+                android:gravity="center"
+                android:onClick="@{() -> bookmarkViewModel.deleteItems()}">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/common_delete"
+                    android:textColor="?colorOnError"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

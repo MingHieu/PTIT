@@ -1,0 +1,45 @@
+.tabs {
+  white-space: nowrap;
+}
+
+.tab-links {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.tab-links li {
+  margin-right: 20px;
+  margin-bottom: 1rem;
+}
+
+.tab-links li a {
+  display: block;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  border: 1px solid var(--border-color);
+}
+
+.tab-links li a.active {
+  background-color: var(--button-background);
+  color: #fff;
+  border-color: #333;
+}
+
+.tab-links li a[href='delete'] {
+  border: 1px solid #ff0000;
+  background-color: #ff0000e6;
+  color: #fff;
+}
+
+.tab-contents {
+  flex: 1;
+  border-top: 1px solid #ccc;
+  padding-top: 1rem;
+}
+
+.tab-content h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}

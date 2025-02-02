@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="workoutPlanAdapter"
+            type="com.ltmb.fitness.scene.home.BookmarkWorkoutPlanAdapter" />
+
+        <variable
+            name="bodyAreaAdapter"
+            type="com.ltmb.fitness.scene.home.BodyAreaAdapter" />
+
+        <variable
+            name="bookmarkViewModel"
+            type="com.ltmb.fitness.internal.injection.viewmodel.BookmarkViewModel" />
+
+        <variable
+            name="viewModel"
+            type="com.ltmb.fitness.scene.home.HomeViewModel" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:weightSum="3">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_run"
+                        app:tint="?colorPrimary" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/app_name"
+                    android:textAlignment="center"
+                    android:textColor="?colorText"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <com.ltmb.fitness.widget.inputview.InputView
+                android:id="@+id/search_box"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:hint="@string/search_workout"
+                android:textColorHint="?colorInputTextHintColor"
+                app:iv_background="?colorInputBackground"
+                app:iv_enabled="false"
+                app:iv_left_icon="@drawable/ic_search"
+                app:iv_left_icon_tint="?colorText"
+                app:iv_onClick="@{() -> viewModel.onSearchBoxClicked()}" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="16dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="10dp"
+                        android:layout_weight="1"
+                        android:text="@string/home_screen_workout_plan_title"
+                        android:textColor="?colorText"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:onClick="@{() -> viewModel.onViewMoreWorkoutPlanClick()}"
+                        android:src="@drawable/ic_arrow_right" />
+                </LinearLayout>
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="8dp"
+                    app:adapter="@{workoutPlanAdapter}"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:submitList="@{bookmarkViewModel.workoutPlans.size() > 1 ? bookmarkViewModel.workoutPlans.subList(0, 2) : bookmarkViewModel.workoutPlans}"
+                    tools:itemCount="2"
+                    tools:listitem="@layout/item_workout_plan" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
+                    android:paddingHorizontal="16dp"
+                    android:text="@string/home_screen_body_area_focus_title"
+                    android:textColor="?colorText"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="8dp"
+                    app:adapter="@{bodyAreaAdapter}"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    app:spanCount="2"
+                    app:submitList="@{viewModel.bodyAreas}"
+                    tools:itemCount="6"
+                    tools:listitem="@layout/item_body_area" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

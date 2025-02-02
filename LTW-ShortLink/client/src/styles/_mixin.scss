@@ -1,0 +1,113 @@
+@import './variable';
+
+@mixin materialStyle($inputHeight) {
+  $labelHeight: 22px;
+
+  .ant-form-item {
+    margin-bottom: 0;
+
+    .ant-form-item-label {
+      z-index: 2;
+      height: 10px;
+      overflow: visible;
+
+      label {
+        top: calc(10px + ($inputHeight - $labelHeight) / 2);
+        left: 6px;
+        transform-origin: top left;
+        transition: all 0.2s;
+        padding: 0 0.4rem;
+        background-color: white;
+        color: gray;
+        height: $labelHeight;
+
+        &.ant-form-item-required::before {
+          display: none;
+        }
+
+        &.ant-form-item-required::after {
+          display: inline-block;
+          margin: 0;
+          margin-inline-start: 3px;
+          color: inherit;
+          content: "*";
+        }
+      }
+    }
+
+    .ant-select {
+      &>span.ant-select-clear {
+        margin-right: 4px;
+      }
+    }
+
+    &:has(input:focus) .ant-form-item-label label,
+    &:has(input[value]:not([value=''])) .ant-form-item-label label,
+    &:has(textarea:focus) .ant-form-item-label label,
+    &:has(textarea:not(:empty)) .ant-form-item-label label,
+    &:has(.ant-select-selection-item) .ant-form-item-label label {
+      transform: translateY(- calc($inputHeight / 2)) scale(0.75);
+    }
+
+    &:not(.ant-form-item-has-error) {
+      &:has(input:hover) .ant-form-item-label label,
+      &:has(label:hover) .ant-form-item-label label,
+      &:has(.ant-input-number-handler-wrap:hover) .ant-form-item-label label,
+      &:has(.ant-picker:hover) .ant-form-item-label label,
+      &:has(.ant-select:hover) .ant-form-item-label label,
+      &:has(textarea:hover) .ant-form-item-label label,
+      &:has(input:focus) .ant-form-item-label label,
+      &:has(textarea:focus) .ant-form-item-label label,
+      &:has(.ant-picker-focused) .ant-form-item-label label,
+      &:has(.ant-input-affix-wrapper:hover) .ant-form-item-label label {
+        color: $text-input-color;
+      }
+
+      &:has(input:hover) .ant-input,
+      &:has(label:hover) .ant-input,
+      &:has(.ant-input-number-handler-wrap:hover) .ant-input,
+      &:has(.ant-picker:hover) .ant-input,
+      &:has(.ant-select:hover) .ant-input,
+      &:has(textarea:hover) .ant-input,
+      &:has(input:focus) .ant-input,
+      &:has(textarea:focus) .ant-input,
+      &:has(.ant-picker-focused) .ant-input,
+      &:has(.ant-input-affix-wrapper:hover) .ant-input {
+        border-color: $border-input-color;
+      }
+
+      &:has(label:hover) .ant-form-item-control .ant-select .ant-select-selector,
+      &:has(label:hover) .ant-form-item-control .ant-input-number,
+      &:has(label:hover) .ant-form-item-control .ant-picker,
+      &:has(label:hover) .ant-form-item-control .ant-input-affix-wrapper {
+        border-color: $border-input-color;
+      }
+
+      &:has(div:hover) .ant-form-item-control .ant-select .ant-select-selector,
+      &:has(div:hover) .ant-form-item-control .ant-input-number,
+      &:has(div:hover) .ant-form-item-control .ant-picker,
+      &:has(div:hover) .ant-form-item-control .ant-input-affix-wrapper {
+        border-color: $border-input-color;
+      }
+
+      &:has(div:focus-within) .ant-form-item-control .ant-select .ant-select-selector,
+      &:has(div:focus-within) .ant-form-item-control .ant-input-number,
+      &:has(div:focus-within) .ant-form-item-control .ant-picker,
+      &:has(div:focus-within) .ant-form-item-control .ant-input-affix-wrapper {
+        border-color: $border-input-color;
+      }
+    }
+
+    &.ant-form-item-has-error {
+      .ant-form-item-label label {
+        color: $error-color !important;
+      }
+    }
+
+    @media (max-width: 575px) {
+      .ant-form-item-label {
+        flex: none;
+      }
+    }
+  }
+}

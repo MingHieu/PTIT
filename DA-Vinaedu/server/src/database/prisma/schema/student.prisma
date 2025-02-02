@@ -1,0 +1,18 @@
+model Student {
+    id          Int       @id @default(autoincrement())
+    user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+    userId      Int
+    classroom   Classroom @relation(fields: [classroomId], references: [id], onDelete: Cascade)
+    classroomId String
+
+    name  String?
+    image File?
+
+    attendances Attendance[]
+    submissions Submission[]
+
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+
+    @@unique([classroomId, userId])
+}

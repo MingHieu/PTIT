@@ -1,0 +1,17 @@
+.dashboard {
+  :global(.ant-space-item) {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+  }
+}
+
+.buttonGroup {
+  :global(.ant-form-item-control-input-content) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

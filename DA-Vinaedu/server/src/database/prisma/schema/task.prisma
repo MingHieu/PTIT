@@ -1,0 +1,95 @@
+model Assignment {
+    id          Int       @id @default(autoincrement())
+    classroom   Classroom @relation(fields: [classroomId], references: [id], onDelete: Cascade)
+    classroomId String
+
+    title       String
+    description String?
+    dueDate     BigInt?
+    type        AssignmentType
+    files       File[]
+    questions   Question[]
+    submissions Submission[]
+    category    AssignmentCategory? @relation(fields: [categoryId], references: [id])
+    categoryId  Int?
+
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+}
+
+enum AssignmentType {
+    ESSAY
+    QUIZ
+}
+
+model AssignmentCategory {
+    id          Int          @id @default(autoincrement())
+    assignments Assignment[]
+    classroom   Classroom    @relation(fields: [classroomId], references: [id], onDelete: Cascade)
+    classroomId String
+
+    title String
+
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+}
+
+model Exam {
+    id          Int       @id @default(autoincrement())
+    classroom   Classroom @relation(fields: [classroomId], references: [id], onDelete: Cascade)
+    classroomId String
+
+    title       String
+    description String?
+    dueDate     BigInt?
+    duration    Int
+    isGraded    Boolean
+    type        AssignmentType
+    files       File[]
+    questions   Question[]
+    submissions Submission[]
+
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+}
+
+model Question {
+    id           Int         @id @default(autoincrement())
+    assignment   Assignment? @relation(fields: [assignmentId], references: [id], onDelete: Cascade)
+    assignmentId Int?
+    exam         Exam?       @relation(fields: [examId], references: [id], onDelete: Cascade)
+    examId       Int?
+
+    title   String
+    answers Answer[]
+}
+
+model Answer {
+    id         Int      @id @default(autoincrement())
+    question   Question @relation(fields: [questionId], references: [id], onDelete: Cascade)
+    questionId Int
+
+    title   String
+    correct Boolean
+}
+
+model Submission {
+    id           Int         @id @default(autoincrement())
+    student      Student     @relation(fields: [studentId], references: [id], onDelete: Cascade)
+    studentId    Int
+    assignment   Assignment? @relation(fields: [assignmentId], references: [id], onDelete: Cascade)
+    assignmentId Int?
+    exam         Exam?       @relation(fields: [examId], references: [id], onDelete: Cascade)
+    examId       Int?
+
+    file      File?
+    answerIds Int[]
+    grade     Float?
+    feedback  String?
+
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+
+    @@unique([studentId, assignmentId])
+    @@unique([studentId, examId])
+}

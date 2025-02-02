@@ -1,0 +1,50 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="50dp">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/custom_button_wrapper"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:foreground="?android:attr/selectableItemBackgroundBorderless"
+        app:cardBackgroundColor="@color/primary"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="0dp">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/custom_button_inner_wrapper"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="1dp"
+            app:cardBackgroundColor="@color/primary"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="0dp">
+
+            <TextView
+                android:id="@+id/custom_button_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="Button Title"
+                android:textColor="@color/on_primary"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@+id/custom_button_loading"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <ProgressBar
+                    style="?android:attr/progressBarStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:indeterminateTint="@color/white" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </androidx.cardview.widget.CardView>
+
+</FrameLayout>

@@ -1,0 +1,150 @@
+datasource db {
+    provider = "postgresql"
+    url      = env("DB_URL")
+}
+
+generator client {
+    provider = "prisma-client-js"
+}
+
+model User {
+    id       Int      @id @default(autoincrement())
+    createAt DateTime @default(now())
+    updateAt DateTime @updatedAt
+
+    username String @unique
+    password String
+
+    avatar      String?
+    name        String
+    sex         Int
+    phoneNumber String
+    email       String
+    dob         DateTime
+    address     String
+    joinAt      DateTime
+    dayOffRemain Int
+
+    token String?
+    role  String
+
+    events           Event[]
+    projectsAsLeader Project[]    @relation("leader")
+    projectsAsMember Project[]    @relation("members")
+    requests         Request[]
+    salaries         Salary[]
+    attendances      Attendance[]
+    skills           Skill[]
+}
+
+model Attendance {
+    date DateTime @default(now()) @db.Date
+
+    checkIn  DateTime?
+    checkOut DateTime?
+    status   Int
+
+    user     User   @relation(fields: [username], references: [username])
+    username String
+
+    @@id([username, date])
+}
+
+model Salary {
+    id       Int      @id @default(autoincrement())
+    createAt DateTime @default(now())
+    value    BigInt
+    note     String?
+
+    user     User   @relation(fields: [username], references: [username])
+    username String
+}
+
+model Request {
+    id       Int      @id @default(autoincrement())
+    createAt DateTime @default(now())
+
+    name    String
+    content String?
+    type    Int
+
+    status Int
+    reply  String?
+
+    user     User   @relation(fields: [username], references: [username])
+    username String
+}
+
+model News {
+    id       Int      @id @default(autoincrement())
+    createAt DateTime @default(now())
+
+    thumbnail String?
+    name      String
+    content   Json
+}
+
+model Event {
+    id        Int      @id @default(autoincrement())
+    createAt  DateTime @default(now())
+    expiredAt DateTime
+
+    name    String
+    from    DateTime
+    to      DateTime
+    address String
+
+    participants User[]
+}
+
+model Project {
+    id       Int       @id @default(autoincrement())
+    startAt  DateTime
+    finishAt DateTime?
+
+    name   String
+    skills Skill[]
+    status Int
+
+    leader         User   @relation("leader", fields: [leaderUsername], references: [username])
+    leaderUsername String
+
+    members User[] @relation("members")
+}
+
+model Skill {
+    id   Int    @id @default(autoincrement())
+    name String @unique
+
+    projects Project[]
+    users    User[]
+}
+
+model Notification {
+    id       Int      @id @default(autoincrement())
+    createAt DateTime @default(now())
+
+    name    String
+    content String
+}
+
+model Role {
+    name String @id
+}
+
+model Permission {
+    name String
+    role String
+
+    @@id([name, role])
+}
+
+model File {
+    id      Int    @id @default(autoincrement())
+    content String
+}
+
+model Setting {
+    name  String  @id
+    value String?
+}
